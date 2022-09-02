@@ -9,7 +9,7 @@ app.listen(port, function () {
 });
 
 // Conectando con mongodb
-const mongoDB = 'mongodb+srv://user-test:passwordtest@cluster0.w8vxo.mongodb.net/inventory-app';
+const mongoDB = 'mongodb+srv://snacks:WUrPA6ZqPR8Uzqov@cluster0.k8yd8ry.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
