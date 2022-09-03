@@ -15,7 +15,6 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('DB connection stablished');
-  init(app);
 });
 
 app.use(bodyParser.json({ limit: '15mb', extended: true }));
