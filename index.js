@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3005;
+const port = process.env.PORT || 3005;
 
 app.listen(port, function () {
-    console.log('listening on '+port)
+    console.log('listening on ' + port);
 });
 
 // Conectando con mongodb
