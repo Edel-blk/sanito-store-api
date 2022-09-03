@@ -13,6 +13,10 @@ const mongoDB = 'mongodb+srv://snacks:WUrPA6ZqPR8Uzqov@cluster0.k8yd8ry.mongodb.
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('DB connection stablished');
+  init(app);
+});
 
 app.use(bodyParser.json({ limit: '15mb', extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
